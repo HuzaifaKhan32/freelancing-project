@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>T-Shirt Emporium - All T-Shirts</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+    @layer base {
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#137fec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+<div class="container mx-auto px-4">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-gray-900 dark:text-white">
+<span class="material-symbols-outlined text-primary text-2xl">style</span>
+<h2 class="text-lg font-bold tracking-[-0.015em]">T-Shirt Emporium</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="#">Home</a>
+<a class="text-sm font-medium text-primary dark:text-primary" href="#">All T-Shirts</a>
+<a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="#">New Arrivals</a>
+<a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="#">Sale</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<label class="hidden sm:flex flex-col relative !h-10 w-full max-w-xs">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-gray-500 dark:text-gray-400 flex items-center justify-center pl-3">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-gray-100 dark:bg-gray-800/50 h-full placeholder:text-gray-500 dark:placeholder:text-gray-400 px-2 text-sm font-normal" placeholder="Search for T-Shirts..." value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-gray-100 dark:bg-gray-800/50 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-2xl">person</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-gray-100 dark:bg-gray-800/50 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-2xl">shopping_bag</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="container mx-auto px-4 py-8">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Filters Sidebar -->
+<aside class="w-full lg:w-64 xl:w-72 flex-shrink-0">
+<div class="sticky top-24 space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">Filters</h3>
+<button class="text-sm text-primary hover:underline">Clear all</button>
+</div>
+<!-- Size Filter -->
+<div class="space-y-3 border-t border-gray-200 dark:border-gray-800 pt-4">
+<h4 class="font-semibold text-gray-900 dark:text-white">Size</h4>
+<div class="flex flex-wrap gap-2">
+<button class="h-10 w-10 rounded-lg border border-gray-300 dark:border-gray-700 text-sm font-medium hover:border-primary hover:text-primary dark:hover:border-primary">S</button>
+<button class="h-10 w-10 rounded-lg border border-gray-300 dark:border-gray-700 text-sm font-medium bg-primary text-white border-primary">M</button>
+<button class="h-10 w-10 rounded-lg border border-gray-300 dark:border-gray-700 text-sm font-medium hover:border-primary hover:text-primary dark:hover:border-primary">L</button>
+<button class="h-10 w-10 rounded-lg border border-gray-300 dark:border-gray-700 text-sm font-medium hover:border-primary hover:text-primary dark:hover:border-primary">XL</button>
+<button class="h-10 w-10 rounded-lg border border-gray-300 dark:border-gray-700 text-sm font-medium hover:border-primary hover:text-primary dark:hover:border-primary">XXL</button>
+</div>
+</div>
+<!-- Color Filter -->
+<div class="space-y-3 border-t border-gray-200 dark:border-gray-800 pt-4">
+<h4 class="font-semibold text-gray-900 dark:text-white">Color</h4>
+<div class="flex flex-wrap gap-3">
+<button class="size-8 rounded-full bg-white border-2 border-primary" data-alt="White swatch, selected"></button>
+<button class="size-8 rounded-full bg-black border-2 border-transparent hover:border-primary" data-alt="Black swatch"></button>
+<button class="size-8 rounded-full bg-gray-400 border-2 border-transparent hover:border-primary" data-alt="Gray swatch"></button>
+<button class="size-8 rounded-full bg-red-500 border-2 border-transparent hover:border-primary" data-alt="Red swatch"></button>
+<button class="size-8 rounded-full bg-blue-500 border-2 border-transparent hover:border-primary" data-alt="Blue swatch"></button>
+<button class="size-8 rounded-full bg-green-500 border-2 border-transparent hover:border-primary" data-alt="Green swatch"></button>
+</div>
+</div>
+<!-- Style Filter -->
+<div class="space-y-3 border-t border-gray-200 dark:border-gray-800 pt-4">
+<h4 class="font-semibold text-gray-900 dark:text-white">Style</h4>
+<div class="space-y-2">
+<label class="flex items-center gap-2 text-sm">
+<input class="form-checkbox rounded text-primary focus:ring-primary/50" type="checkbox"/> Crew Neck
+                </label>
+<label class="flex items-center gap-2 text-sm">
+<input checked="" class="form-checkbox rounded text-primary focus:ring-primary/50" type="checkbox"/> V-Neck
+                </label>
+<label class="flex items-center gap-2 text-sm">
+<input class="form-checkbox rounded text-primary focus:ring-primary/50" type="checkbox"/> Graphic Tee
+                </label>
+<label class="flex items-center gap-2 text-sm">
+<input class="form-checkbox rounded text-primary focus:ring-primary/50" type="checkbox"/> Long Sleeve
+                </label>
+</div>
+</div>
+<button class="w-full flex h-11 items-center justify-center gap-x-2 rounded-lg bg-primary px-6 text-white text-sm font-bold">Apply Filters</button>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-1">
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between items-center gap-4 pb-6 border-b border-gray-200 dark:border-gray-800">
+<div class="flex flex-col gap-1">
+<h1 class="text-gray-900 dark:text-white text-4xl font-black tracking-[-0.033em]">All T-Shirts</h1>
+<p class="text-gray-600 dark:text-gray-400 text-base font-normal">Shop Our Collection of Premium T-Shirts</p>
+</div>
+<!-- Chips -->
+<div class="flex gap-3">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 pl-4 pr-3">
+<p class="text-gray-900 dark:text-white text-sm font-medium">Sort By: Newest</p>
+<span class="material-symbols-outlined text-lg">expand_more</span>
+</button>
+</div>
+</div>
+<!-- ImageGrid -->
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 pt-8">
+<div class="group flex flex-col gap-3 pb-3">
+<div class="relative w-full overflow-hidden rounded-xl">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover transition-transform duration-300 group-hover:scale-105" data-alt="A model wearing a classic heather grey crew neck t-shirt." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCyfY_6kiNAt8sQhI5jtsdIK83ec9y3xWaRccGJ5cDi4rkmE97-MAeEnDfZWhBPyAUVrwld4G6OpnULpjez2TqXhdmmqlmPpcjBb-lXh7ciSikQ8y5z6bJB49r4L74RFBLCrpDMxD_ejEjCKFqHUrkZfb1efVJWuqwYQYXFwIi-SExBDwMqy7we9Xn3z5gQ72DLUTVh4icHN0WAHu0-vApq_I75iCT4AzP6KlsxndkpA7HFxIvwLzUcWzPdtnm6V4X5t4h0kvNuDi-d");'></div>
+<button class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] bg-white/80 dark:bg-black/70 backdrop-blur-sm text-gray-900 dark:text-white font-bold text-sm py-2.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">Quick Add</button>
+</div>
+<div>
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Classic Crew Neck - Heather Grey</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">$24.99</p>
+</div>
+</div>
+<div class="group flex flex-col gap-3 pb-3">
+<div class="relative w-full overflow-hidden rounded-xl">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover transition-transform duration-300 group-hover:scale-105" data-alt="A clean white v-neck t-shirt on a hanger." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDimhynvdz3pDGopFp0yL9h3PtYm_j4Op6dBWSDjW1iQRB215axBFbFbRATy7VUsCIIwFzXc7Ws6IpgaZMIa9TExgLV8AlrXNcG-vwh2lnQLSE8ay-j0_n9VRW0gVEf52V5EBUvcz7z978JYlABHTquPSDaezBT4H2ujG62e2_16cIWleIS7bcz7vQp9Y0JKyKAitCdicKv9GvGfMsc3SWFBvU-8PvU5s2-XhREftLeboiWwpYhPysQZWQeLV6Mr3J-JzD136dzBJlZ");'></div>
+<button class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] bg-white/80 dark:bg-black/70 backdrop-blur-sm text-gray-900 dark:text-white font-bold text-sm py-2.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">Quick Add</button>
+</div>
+<div>
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal">V-Neck Basic Tee - White</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">$19.99</p>
+</div>
+</div>
+<div class="group flex flex-col gap-3 pb-3">
+<div class="relative w-full overflow-hidden rounded-xl">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover transition-transform duration-300 group-hover:scale-105" data-alt="A black t-shirt with a minimalist graphic print." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArYNXy2YAkkNv9-jmRKb1vOWYilbNQ1WlxIr-JBwYqtCWRrgP8dPylNeqy5rTbJL6tSI_vU_oedmhMwksjOzLRNC-vEf0lBJii7vsMOeXlxD7rwKLHxIKinSBv53Huj7qP8bbp1TojWh65rT-S37EnC_FDxPdOOGKMfga4N2EZWDuDWnosyerar4laOWVUGrudiio2AENDhwCV3PVLzCHiYCFevlbLws6xRESE97fJYs8T1PZhUydVXdCHnqitNqS2G5mrvBOH5qLx");'></div>
+<button class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] bg-white/80 dark:bg-black/70 backdrop-blur-sm text-gray-900 dark:text-white font-bold text-sm py-2.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">Quick Add</button>
+</div>
+<div>
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Graphic Print Tee - Black</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">$29.99</p>
+</div>
+</div>
+<div class="group flex flex-col gap-3 pb-3">
+<div class="relative w-full overflow-hidden rounded-xl">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover transition-transform duration-300 group-hover:scale-105" data-alt="A vintage-style navy t-shirt with a chest pocket." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDRtlpNhFj-nZl2ddbAISaNnF-_UZLc72TsEArjGN86L-2UWFoRxdGpxDGq4328fvY7AfWwy7qe7EwUTe9zf0MgrPGE0slIjCO1_CItO4THgQ81v8DRjhYJ2wdK_TGszC4rbQHx1qrMgbhYLpJlIzhKB84cNc_wsJEAqWT7bN2938cbGRYcdsw4u8ktUNS7X2QlMxuMZi6kz7vFZ8IH1cQnjM9sHlfFebugpcNcvZO1mCMZvDojpaWj4SCAGPvYGnqRR1wwoHifKTmh");'></div>
+<button class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] bg-white/80 dark:bg-black/70 backdrop-blur-sm text-gray-900 dark:text-white font-bold text-sm py-2.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">Quick Add</button>
+</div>
+<div>
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Vintage Wash Pocket Tee - Navy</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">$27.50</p>
+</div>
+</div>
+<div class="group flex flex-col gap-3 pb-3">
+<div class="relative w-full overflow-hidden rounded-xl">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover transition-transform duration-300 group-hover:scale-105" data-alt="An olive green slim fit henley shirt." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD8FtK77E6-1A2zBeuX-bnqIxMu7dz0nqv8mGiWPKOHaY1mmgDPIe0cQHO1lT8w6AC3xASfEUX--Vtz0CELEVJj4r_0NrxcK_zKaoMIpG9rHXto8vxvwhVfml2Qw0LVN5M894OsOFxJK6eLuBycTSioQNnn04P-yvyCUVXA2K6ywO2rUIp01EwlKbsAipZxEzgvqfrUsxk7DcqYn1C_f93rnbBEI8C2qczjF-tMamGsD_qTnvuzhWtM5cQ_vniWTEfoCUyNiTTHoV6R");'></div>
+<button class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] bg-white/80 dark:bg-black/70 backdrop-blur-sm text-gray-900 dark:text-white font-bold text-sm py-2.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">Quick Add</button>
+</div>
+<div>
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Slim Fit Henley - Olive</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">$26.00</p>
+</div>
+</div>
+<div class="group flex flex-col gap-3 pb-3">
+<div class="relative w-full overflow-hidden rounded-xl">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover transition-transform duration-300 group-hover:scale-105" data-alt="A long sleeve crew neck shirt in charcoal color." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCBTCwZ30oIw4z8JEw3l1eK3yv3KhiZZgbDBrJHYxRw41-AQtycF7NvXNZvIYzlAH1Bubh0byC4D02fAgk6O06yi3CZfE0_lJk0_agi0wDgAVOjIyxuFs1Q4QmkVA6tF0FkQFyFTPKbWJyRyRMkRP5F_GVOfV-yXCQEebh7vpBxzk9la-4_MFIwJGxdSI5kQFp7PIfGjhG7cJpDNU60_DbglNdqAOtfZYyhlhM2wXFScyykwARNyl1qhpER1AJbXFji6I6Sg9zqrLj1");'></div>
+<button class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] bg-white/80 dark:bg-black/70 backdrop-blur-sm text-gray-900 dark:text-white font-bold text-sm py-2.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">Quick Add</button>
+</div>
+<div>
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Long Sleeve Crew - Charcoal</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">$32.00</p>
+</div>
+</div>
+<div class="group flex flex-col gap-3 pb-3">
+<div class="relative w-full overflow-hidden rounded-xl">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover transition-transform duration-300 group-hover:scale-105" data-alt="A red and white striped cotton t-shirt." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAItxv1YXfrD0xSObO_2qF_tv99PPaWChgesZlg_ecTaFkWsG1-VHu1AOVsR1O9r6XPbcl-rEqEtGcO_UVEvAqCWpOgKPel7lmQf3hlvxZVV34A_zQfOCS8UBWmY0gsYhjjtVy3UM3WBqf5Fc7Qtx3iyQwZLXch0GwYSq_Uwy9BJ4ANgdUqlmHmSfuUQ2gdSGxVua91BdVLtubumEVKLckqH_42mkv4-xegX-Pe8OFyfPnkFHcyKDhWHDtSUFGzoWfLcc0WMujbIcm-");'></div>
+<button class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] bg-white/80 dark:bg-black/70 backdrop-blur-sm text-gray-900 dark:text-white font-bold text-sm py-2.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">Quick Add</button>
+</div>
+<div>
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Striped Cotton Tee - Red/White</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">$22.99</p>
+</div>
+</div>
+<div class="group flex flex-col gap-3 pb-3">
+<div class="relative w-full overflow-hidden rounded-xl">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover transition-transform duration-300 group-hover:scale-105" data-alt="A royal blue tri-blend v-neck t-shirt." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCkNA58YnLy61b7trPNp_WK_Uul85TLGCNO2FOTIimX7SlSc1Ofh5VthUyUgj9riWaEjIeYQndrhKpFTRXGbRd53nK9Ft3yNg-2M3ohfb7TUFdFSY4h_lTL4k6BNji2NZCrqtrf_KpXQhJHlUIZdzf2Pvq6b-QFVbo2SHo3hu7DGaeyT0KG1m8kpmqrlVe1TfqVWCBpiLJyW4w0ZFPEiNWDQbbLqJUmP_Fnr_02FTKO6Lz6VS7PvbbnlfWEdcMfkM8GeCN9hwxoP6PP");'></div>
+<button class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] bg-white/80 dark:bg-black/70 backdrop-blur-sm text-gray-900 dark:text-white font-bold text-sm py-2.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">Quick Add</button>
+</div>
+<div>
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Tri-Blend V-Neck - Royal Blue</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">$24.99</p>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center pt-8 mt-8 border-t border-gray-200 dark:border-gray-800">
+<a class="flex size-10 items-center justify-center text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined">chevron_left</span>
+</a>
+<a class="text-sm font-bold flex size-10 items-center justify-center text-white rounded-full bg-primary" href="#">1</a>
+<a class="text-sm font-medium flex size-10 items-center justify-center text-gray-600 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800" href="#">2</a>
+<a class="text-sm font-medium flex size-10 items-center justify-center text-gray-600 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800" href="#">3</a>
+<span class="text-sm font-medium flex size-10 items-center justify-center text-gray-500 dark:text-gray-400 rounded-full">...</span>
+<a class="text-sm font-medium flex size-10 items-center justify-center text-gray-600 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800" href="#">12</a>
+<a class="flex size-10 items-center justify-center text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 mt-16">
+<div class="container mx-auto px-4 py-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="col-span-2 md:col-span-1">
+<div class="flex items-center gap-3 text-gray-900 dark:text-white mb-4">
+<span class="material-symbols-outlined text-primary text-2xl">style</span>
+<h2 class="text-lg font-bold tracking-[-0.015em]">T-Shirt Emporium</h2>
+</div>
+<p class="text-sm text-gray-600 dark:text-gray-400">Quality tees for every occasion.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-gray-900 dark:text-white">Shop</h4>
+<ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+<li><a class="hover:text-primary" href="#">New Arrivals</a></li>
+<li><a class="hover:text-primary" href="#">Best Sellers</a></li>
+<li><a class="hover:text-primary" href="#">Sale</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-gray-900 dark:text-white">Customer Service</h4>
+<ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+<li><a class="hover:text-primary" href="#">Contact Us</a></li>
+<li><a class="hover:text-primary" href="#">Shipping &amp; Returns</a></li>
+<li><a class="hover:text-primary" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-gray-900 dark:text-white">Company</h4>
+<ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+<li><a class="hover:text-primary" href="#">About Us</a></li>
+<li><a class="hover:text-primary" href="#">Careers</a></li>
+<li><a class="hover:text-primary" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800 text-center text-sm text-gray-500 dark:text-gray-400">
+<p>© 2024 T-Shirt Emporium. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

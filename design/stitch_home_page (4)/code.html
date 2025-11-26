@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Detail Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              "neutral-100": "#f0f2f4",
+              "neutral-200": "#dbe0e6",
+              "neutral-600": "#617589",
+              "neutral-900": "#111418",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-neutral-900 dark:text-neutral-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-neutral-100 dark:border-neutral-900 px-4 sm:px-10 lg:px-20 py-3 bg-white dark:bg-background-dark">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-neutral-900 dark:text-neutral-100">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-neutral-900 dark:text-neutral-100 text-lg font-bold leading-tight tracking-[-0.015em]">TeeShop</h2>
+</div>
+<div class="hidden lg:flex items-center gap-9">
+<a class="text-neutral-900 dark:text-neutral-100 text-sm font-medium leading-normal" href="#">New Arrivals</a>
+<a class="text-neutral-900 dark:text-neutral-100 text-sm font-medium leading-normal" href="#">Men</a>
+<a class="text-neutral-900 dark:text-neutral-100 text-sm font-medium leading-normal" href="#">Women</a>
+<a class="text-neutral-900 dark:text-neutral-100 text-sm font-medium leading-normal" href="#">Collections</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end items-center gap-4">
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-neutral-600 dark:text-neutral-200 flex border-none bg-neutral-100 dark:bg-neutral-900 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-neutral-900 dark:text-neutral-100 focus:outline-0 focus:ring-0 border-none bg-neutral-100 dark:bg-neutral-900 focus:border-none h-full placeholder:text-neutral-600 dark:placeholder:text-neutral-200 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search" value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 py-4">
+<a class="text-neutral-600 dark:text-neutral-200 text-sm font-medium leading-normal hover:text-primary" href="#">Home</a>
+<span class="text-neutral-600 dark:text-neutral-200 text-sm font-medium leading-normal">/</span>
+<a class="text-neutral-600 dark:text-neutral-200 text-sm font-medium leading-normal hover:text-primary" href="#">T-Shirts</a>
+<span class="text-neutral-600 dark:text-neutral-200 text-sm font-medium leading-normal">/</span>
+<span class="text-neutral-900 dark:text-neutral-100 text-sm font-medium leading-normal">Vintage Graphic Tee</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mt-4">
+<!-- Left Column: Image Gallery -->
+<div class="flex flex-col gap-4">
+<div class="w-full bg-center bg-no-repeat bg-cover aspect-square rounded-lg" data-alt="Model wearing a vintage graphic tee, front view." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcpa_XtYnSEVqTW5JPhEtmmAQJZhbsk8Z1e6E1Ed0-KYRoc68dSWuHR66hcgMe96rROh22qNrVWUNBAnsOhqX0bZwNuBB5lHLJBasF-OYuYLyOcpEDM4Zl7MtHQibgzLeBUTTiJb03YhKAPvI8Eq3Nx8oOLd7Leb7EnRQRXwHU_M6rILGjhnw1iDhpGy7RttsBdMx0QnoIKGdJlppJ-3O_YeakUcbyPJhDn4Cc77v2WE6uWTmv92X8beJYHw8eoMN4KSbCC2Nt4G89");'></div>
+<div class="grid grid-cols-4 gap-4">
+<div class="w-full bg-center bg-no-repeat bg-cover aspect-square rounded-lg border-2 border-primary" data-alt="Thumbnail of model wearing tee, front view." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDIAYxr55TFklYXHMpM5ZROu10w0Af2kaLdMAquYW7kXG4pZvmt--Ebuoa2pL5sM1L8jGxIFys8yf047Lxg-fQmq7dZN8H_ky6sbwLzQTrYGpEazYYarygLRvxw_6xAZq9Mna4YnikHxIC8JwT6-BCNMQTIqlP7EE9Hm0mcqip2qgb8Ltg-yLIYwv35TFG5q165Yp2K4fZZPOfNFd9ztr88mEMgM32DMwRStltpMGboTQt9qQtQrcYDKB8ossfxPE46i8rWi8wGvqDM");'></div>
+<div class="w-full bg-center bg-no-repeat bg-cover aspect-square rounded-lg" data-alt="Thumbnail of tee flat lay." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAAqVlN9XKoxTn9OtL3jqa6D0GQL_3540Y3ZzN6MKJpV9HLhNV6bYHzrt2JFHZnNr38v-VWcYiKI984mFzvFWfZUb88VmcYEzSzLWLaspVyP8hB80YcZcawq162saIk89OGghvaIMkuJBNE4fRxmXC4g09W9KH4XXEC7Kx7C-LlHqESiQpBjOadHU_IZXOlJxycnZQRL0yn9DeBQw-eAgDnsO3pzdFrORjsuyzRHCGz874UN-gP09qON1gpOefHEOmeEImGeQ5KPmDU");'></div>
+<div class="w-full bg-center bg-no-repeat bg-cover aspect-square rounded-lg" data-alt="Thumbnail of fabric detail." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxP2zecKG_tyoyP4q54_Kca7XDOlRhWlRNBFuDWxDpKc04742KoKqArv398JKVpt6eMkQPJ2bF0W4foGxEnRSTxDRmWLTlwT4mKRN6aCqKa3kbbzL0M-BuYTJwV_UQ0mfYlxJ9lHWgxeHCh7Fam8F6S4ukL8Yom6gDKpr4db7M-WwJhdgA9oksadHQttMk2zpVtXFLAIcevxPKnR8q3PtCYu2vA1Kc7c75_xk_dpUm7pGWCwy40Hzn8oyK2We_9nUyEwG6vEW76Jsi");'></div>
+<div class="w-full bg-center bg-no-repeat bg-cover aspect-square rounded-lg" data-alt="Thumbnail of model wearing tee, back view." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAo_6GCBJH2Pv-kqEYV3a8Fdgvunm2GUernoGze0f4l7KX6BvK39vpXL-BNBYHKASQwAW9feRY9NmueKEqlrkwVCcxgeemKfFA-CLoG5NZkMG-5AXPYlgOyCrkbfqa9KbS3W6XqQCjr6jy59PJ9NOjpQ-kBE76mNN7j8x7_J0VAtwvDbv5BvMkb4sjigWmwss-P_eQAMGVuhpvcdwpwQhoaoCOF0ePQ7ahcHh5XZVV24bchbKb9hnapH-4bww45BmP_33iAWmYQ9pEr");'></div>
+</div>
+</div>
+<!-- Right Column: Product Info -->
+<div class="flex flex-col gap-6">
+<!-- Product Information -->
+<div>
+<h1 class="text-neutral-900 dark:text-neutral-100 text-3xl md:text-4xl font-bold leading-tight">Vintage Graphic Tee</h1>
+<div class="flex items-center gap-2 mt-2">
+<div class="flex gap-0.5 text-neutral-900 dark:text-yellow-400">
+<span class="material-symbols-outlined !text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-lg">star_half</span>
+</div>
+<a class="text-neutral-600 dark:text-neutral-200 text-sm font-medium leading-normal hover:text-primary" href="#reviews">(128 reviews)</a>
+</div>
+</div>
+<!-- Price -->
+<p class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">$29.99 <span class="text-xl font-normal text-neutral-600 dark:text-neutral-200 line-through ml-2">$39.99</span></p>
+<!-- Color Selector -->
+<div class="flex flex-col gap-3">
+<p class="text-sm font-medium text-neutral-900 dark:text-neutral-100">Color: <span class="font-normal text-neutral-600 dark:text-neutral-200">Vintage Black</span></p>
+<div class="flex gap-3">
+<button class="size-8 rounded-full bg-gray-900 ring-2 ring-offset-2 ring-primary dark:ring-offset-background-dark"></button>
+<button class="size-8 rounded-full bg-white border border-neutral-200"></button>
+<button class="size-8 rounded-full bg-red-700"></button>
+<button class="size-8 rounded-full bg-blue-800"></button>
+</div>
+</div>
+<!-- Size Selector -->
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<p class="text-sm font-medium text-neutral-900 dark:text-neutral-100">Size</p>
+<a class="text-sm font-medium text-primary hover:underline" href="#">Size Guide</a>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="px-4 py-2 border rounded-lg border-neutral-200 dark:border-neutral-600 text-sm font-medium">XS</button>
+<button class="px-4 py-2 border rounded-lg bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 border-neutral-900 dark:border-neutral-100 text-sm font-medium">S</button>
+<button class="px-4 py-2 border rounded-lg border-neutral-200 dark:border-neutral-600 text-sm font-medium">M</button>
+<button class="px-4 py-2 border rounded-lg border-neutral-200 dark:border-neutral-600 text-sm font-medium">L</button>
+<button class="px-4 py-2 border rounded-lg border-neutral-200 dark:border-neutral-600 text-sm font-medium">XL</button>
+<button class="px-4 py-2 border rounded-lg border-neutral-200 dark:border-neutral-600 text-sm font-medium text-neutral-600 dark:text-neutral-200 cursor-not-allowed" disabled="">XXL</button>
+</div>
+</div>
+<!-- Quantity and CTA -->
+<div class="flex flex-col sm:flex-row gap-4 mt-4">
+<div class="flex items-center border rounded-lg border-neutral-200 dark:border-neutral-600">
+<button class="px-4 py-3 text-neutral-600 dark:text-neutral-200"><span class="material-symbols-outlined !text-xl">remove</span></button>
+<input class="w-12 text-center bg-transparent border-0 focus:ring-0 text-neutral-900 dark:text-neutral-100" readonly="" type="text" value="1"/>
+<button class="px-4 py-3 text-neutral-600 dark:text-neutral-200"><span class="material-symbols-outlined !text-xl">add</span></button>
+</div>
+<button class="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-white font-bold text-base leading-normal">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+                        Add to Cart
+                    </button>
+</div>
+<!-- Description Accordion -->
+<div class="border-t border-neutral-200 dark:border-neutral-600 pt-6">
+<div class="border-b border-neutral-200 dark:border-neutral-600 py-4">
+<details class="group" open="">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100">Description</h3>
+<span class="text-neutral-600 dark:text-neutral-200 transition-transform duration-300 group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<div class="mt-4 text-sm text-neutral-600 dark:text-neutral-200 space-y-2">
+<p>Experience timeless style with our Vintage Graphic Tee. Made from ultra-soft, 100% premium cotton, this t-shirt offers both comfort and durability. The classic fit and retro-inspired graphic make it a versatile wardrobe staple.</p>
+</div>
+</details>
+</div>
+<div class="border-b border-neutral-200 dark:border-neutral-600 py-4">
+<details class="group">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100">Specifications &amp; Care</h3>
+<span class="text-neutral-600 dark:text-neutral-200 transition-transform duration-300 group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<ul class="mt-4 text-sm text-neutral-600 dark:text-neutral-200 space-y-2 list-disc pl-5">
+<li>Material: 100% Ring-Spun Cotton</li>
+<li>Fit: Slim Fit</li>
+<li>Origin: Made in USA</li>
+<li>Care: Machine wash cold, tumble dry low.</li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+</div>
+<!-- Customer Reviews Section -->
+<div class="mt-16 lg:mt-24" id="reviews">
+<h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 mb-6">Customer Reviews</h2>
+<div class="flex flex-col md:flex-row flex-wrap gap-x-12 gap-y-8 p-4 bg-white dark:bg-background-dark rounded-lg border border-neutral-100 dark:border-neutral-900">
+<div class="flex flex-col gap-2">
+<p class="text-neutral-900 dark:text-neutral-100 text-4xl font-black leading-tight">4.5</p>
+<div class="flex gap-0.5 text-neutral-900 dark:text-yellow-400">
+<span class="material-symbols-outlined !text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined !text-lg">star_half</span>
+</div>
+<p class="text-neutral-600 dark:text-neutral-200 text-base font-normal leading-normal">Based on 128 reviews</p>
+</div>
+<div class="grid min-w-[200px] max-w-[400px] flex-1 grid-cols-[20px_1fr_40px] items-center gap-x-4 gap-y-3">
+<p class="text-neutral-900 dark:text-neutral-100 text-sm font-normal">5</p>
+<div class="flex h-2 flex-1 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-900"><div class="rounded-full bg-neutral-900 dark:bg-neutral-100" style="width: 75%;"></div></div>
+<p class="text-neutral-600 dark:text-neutral-200 text-sm font-normal text-right">75%</p>
+<p class="text-neutral-900 dark:text-neutral-100 text-sm font-normal">4</p>
+<div class="flex h-2 flex-1 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-900"><div class="rounded-full bg-neutral-900 dark:bg-neutral-100" style="width: 15%;"></div></div>
+<p class="text-neutral-600 dark:text-neutral-200 text-sm font-normal text-right">15%</p>
+<p class="text-neutral-900 dark:text-neutral-100 text-sm font-normal">3</p>
+<div class="flex h-2 flex-1 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-900"><div class="rounded-full bg-neutral-900 dark:bg-neutral-100" style="width: 5%;"></div></div>
+<p class="text-neutral-600 dark:text-neutral-200 text-sm font-normal text-right">5%</p>
+<p class="text-neutral-900 dark:text-neutral-100 text-sm font-normal">2</p>
+<div class="flex h-2 flex-1 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-900"><div class="rounded-full bg-neutral-900 dark:bg-neutral-100" style="width: 3%;"></div></div>
+<p class="text-neutral-600 dark:text-neutral-200 text-sm font-normal text-right">3%</p>
+<p class="text-neutral-900 dark:text-neutral-100 text-sm font-normal">1</p>
+<div class="flex h-2 flex-1 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-900"><div class="rounded-full bg-neutral-900 dark:bg-neutral-100" style="width: 2%;"></div></div>
+<p class="text-neutral-600 dark:text-neutral-200 text-sm font-normal text-right">2%</p>
+</div>
+</div>
+</div>
+<!-- You Might Also Like Section -->
+<div class="mt-16 lg:mt-24">
+<h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 mb-6">You Might Also Like</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<div class="flex flex-col group">
+<div class="relative overflow-hidden rounded-lg">
+<div class="aspect-square w-full bg-cover bg-center" data-alt="Striped casual t-shirt on a hanger." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEYpJg5evo8zc2fUK9Zh1wJMaUTFhzUFht8YtFU5aVdu5gHxdMsffb_Ig27Jcqryig0X-sNVonhb320bMEO3GZ2C2LCZEnEOoCNNJT4cy6p0lwYNHq0-jb_fraoK5zY-18IxjRRerYf6iDa9i4_rep0UHC3UDveiMQgywLVsDTD2G6aIg48wq-k-9vv0YOM9XyOI-NyoTGnsYDZu82gEhte673cUiMaPyhpg4rxNPeD_d2EL6Jtik6K4ZN8rQYHL7-udINk_O5RbI0')"></div>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="mt-3">
+<h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100">Striped Tee</h3>
+<p class="text-lg font-bold text-neutral-900 dark:text-neutral-100 mt-1">$24.99</p>
+</div>
+</div>
+<div class="flex flex-col group">
+<div class="relative overflow-hidden rounded-lg">
+<div class="aspect-square w-full bg-cover bg-center" data-alt="Model wearing a minimalist white pocket tee." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3cym1fjp4CpGrO92tWJ0djxKOjMilif9V8hhYXzNM4CIj2Qf3pkk1IGkmfafQt-o3ZQNTtxwa0kYRL0ffeQvwRWP0Sx-8tvahfvNLP5I5k1DzhrklA20aTsfH0EnM0RNO1-3hhYu47sBAi6Ep96yNMrU3Ahd5qG-FogAKJOrcjIXE2IWklnZrGHDG1Ly8YSmSEGzUO-6ua86avbgGk5RRC4QGk6fl-QKmwc-JzbbFLJZJynYp6d0AFU2wDnPE9uF1koBjWwGWoIQN')"></div>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="mt-3">
+<h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100">Pocket Tee</h3>
+<p class="text-lg font-bold text-neutral-900 dark:text-neutral-100 mt-1">$19.99</p>
+</div>
+</div>
+<div class="flex flex-col group">
+<div class="relative overflow-hidden rounded-lg">
+<div class="aspect-square w-full bg-cover bg-center" data-alt="Plain black crewneck t-shirt." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnGmuV8ya5pKq9MUaMN_HKvgviB2zyCu9q7N82JuxeLh8uWojFrSV8d3UDopmoUmMzj391fTssXySublsTn1lnZEh-knJgQXvlg4HN58EvTBmmhf7x3Jg90icVZQgdHMeuOYlw94i3Lg7qXmLfug7vfX7YW4tlNDYNos-XQVS5RF-7O9CzbyDHEcHyaBjr_mQmgaG_RkoOg7OLMkYgbiyog9EaLMo4IpZxB3nYVTOq0aHwl6CpZWsdMSr2nIGLucqn6MkG8nUOcp7w')"></div>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="mt-3">
+<h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100">Classic Crewneck</h3>
+<p class="text-lg font-bold text-neutral-900 dark:text-neutral-100 mt-1">$22.99</p>
+</div>
+</div>
+<div class="flex flex-col group">
+<div class="relative overflow-hidden rounded-lg">
+<div class="aspect-square w-full bg-cover bg-center" data-alt="Henley style long-sleeve t-shirt." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADVQ4RXj2fCqZGswgpwx0lAT_FGkGnw2J3pZ2M_YJfM4yxTqq9SvD3u9qg6Wo2TLFY1syGBcujsYkiv8mI6nYRoI1YhqLZVmoMrGrwI9c3HqbEKitdV3qZoFaIaaPoCSGB2FLfn_ViirsevdA33umSxBRP1fGKGJiDIN8YSxCv4a0_xtjis78fgs1HhzEK497T8YuovKA9u3r-_xiJ2asGTvXkKYu-kAi3tI2JTV4GTJqRZ7rwYLIQkb0LA4cXT0mI0vj49Rm_ZpdU')"></div>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="mt-3">
+<h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100">Henley Tee</h3>
+<p class="text-lg font-bold text-neutral-900 dark:text-neutral-100 mt-1">$32.99</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
