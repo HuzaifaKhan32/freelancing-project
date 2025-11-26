@@ -8,7 +8,7 @@ export default function Home() {
       <section className="w-full py-12 md:py-20 lg:py-24">
         <div className="container mx-auto flex flex-col items-center gap-4 px-4 text-center sm:px-6 lg:px-8">
           <h1 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl">Find Your Next Favorite Tee</h1>
-          <p className="max-w-2xl text-text-secondary-light dark:text-text-secondary-dark md:text-xl">Discover unique, high-quality t-shirts designed by independent artists.</p>
+          <p className="max-w-2xl text-text-secondary-light md:text-xl">Discover unique, high-quality t-shirts designed by independent artists.</p>
           <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-primary text-white text-base font-bold leading-normal tracking-wide shadow-lg shadow-primary/30 transition-all hover:bg-primary/90 hover:shadow-md hover:shadow-primary/30">
             Explore Collections
           </button>
@@ -59,10 +59,10 @@ export default function Home() {
       </section>
       <section className="w-full py-12 md:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center justify-center gap-4 rounded-xl bg-primary/20 dark:bg-primary/10 p-8 text-center md:flex-row md:justify-between md:text-left">
+          <div className="flex flex-col items-center justify-center gap-4 rounded-xl bg-primary/20 p-8 text-center md:flex-row md:justify-between md:text-left">
             <div className="flex flex-col gap-2">
               <h3 className="text-2xl font-bold">Free Shipping On All Orders!</h3>
-              <p className="text-text-secondary-light dark:text-text-secondary-dark">Get your new favorite tees delivered to your door, on us. Limited time offer.</p>
+              <p className="text-text-secondary-light">Get your new favorite tees delivered to your door, on us. Limited time offer.</p>
             </div>
             <button className="flex w-full shrink-0 md:w-auto cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
               Start Shopping

@@ -13,7 +13,7 @@ export default function ProductPage({ params }: { params: { id: string[] } }) {
     <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Breadcrumbs */}
       <div className="flex flex-wrap gap-2 py-4">
-        <a className="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal hover:text-primary" href="/">Home</a>
+        <a className="text-text-secondary-light text-sm font-medium leading-normal hover:text-primary" href="/">Home</a>
         <span className="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">/</span>
         <a className="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal hover:text-primary" href="#">T-Shirts</a>
         <span className="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">/</span>

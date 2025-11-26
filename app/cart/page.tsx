@@ -40,7 +40,7 @@ export default function CartPage() {
             </div>
           </div>
           <div className="lg:col-span-1">
-            <div className="sticky top-24 bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
+            <div className="sticky top-24 bg-gray-100 p-6 rounded-lg">
               <h2 className="text-2xl font-bold mb-4">Summary</h2>
               <div className="flex justify-between mb-2">
                 <span>Subtotal</span>
