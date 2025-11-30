@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { FiFilter } from 'react-icons/fi';
 import { products as initialProducts, Product } from '@/app/lib/data'; // Renamed products to initialProducts to avoid conflict
