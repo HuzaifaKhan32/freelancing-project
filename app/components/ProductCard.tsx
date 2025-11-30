@@ -66,7 +66,7 @@ export default function ProductCard({ product, layout = 'grid' }: ProductCardPro
             <div className="flex flex-col flex-1 justify-between p-4 pt-0 gap-4">
               <div className='h-20 overflow-hidden'>
                 <p className="font-semibold leading-normal">{product.name}</p>
-                <p className="text-text-secondary-light text-sm font-normal leading-normal">${product.price.toFixed(2)}</p>
+                <p className="text-text-secondary-light text-sm font-normal leading-normal mb-2">${product.price.toFixed(2)}</p>
               </div>
               <button
                 onClick={handleCartClick}
@@ -104,11 +104,11 @@ export default function ProductCard({ product, layout = 'grid' }: ProductCardPro
               <h3 className="font-bold text-lg leading-snug">{product.name}</h3>
               <p className="text-text-secondary-light text-sm font-normal leading-normal">Unisex</p>
             </div>
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col items-start gap-2">
               <p className="text-lg font-bold text-primary">${product.price.toFixed(2)}</p>
               <button
                 onClick={handleCartClick}
-                className={`flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 text-sm font-bold transition-colors ${
+                className={`flex w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 text-sm font-bold transition-colors ${
                   isInCart
                     ? 'bg-red-500 text-white hover:bg-red-600'
                     : 'bg-primary text-white hover:bg-primary/90'

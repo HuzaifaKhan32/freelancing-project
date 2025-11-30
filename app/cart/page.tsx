@@ -10,7 +10,7 @@ export default function CartPage() {
 
   return (
     <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-4xl font-bold mb-8">Your Cart</h1>
+      <h1 className="text-2xl sm:text-4xl font-bold mb-8">Your Cart</h1>
       {cart.length > 0 ? (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
@@ -66,7 +66,7 @@ export default function CartPage() {
         <div className="flex min-h-[50vh] flex-col items-center justify-center p-24">
           <div className="flex flex-col items-center gap-4">
             <BsCartX className="text-9xl text-gray-400" />
-            <h1 className="text-4xl font-bold">Your Cart is Empty</h1>
+            <h1 className="text-2xl sm:text-4xl font-bold">Your Cart is Empty</h1>
             <p className="text-gray-500">You haven&apos;t added any products to your cart yet.</p>
           </div>
         </div>

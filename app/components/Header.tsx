@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useWishlist } from '@/app/context/WishlistContext';
 import { useCart } from '@/app/context/CartContext';
 import { products, Product } from '@/app/lib/data';
+import Sidebar from './Sidebar'; // Import the new Sidebar component
 
 export default function Header() {
   const { wishlist } = useWishlist();
@@ -15,6 +16,7 @@ export default function Header() {
   const [results, setResults] = useState<Product[]>([]);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const searchContainerRef = useRef<HTMLDivElement>(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State for sidebar
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -51,6 +53,14 @@ export default function Header() {
     <header className="sticky top-0 z-50 flex items-center justify-center border-b border-solid border-text-light/10 bg-background-light/80 backdrop-blur-sm">
       <div className="flex w-full max-w-7xl items-center justify-between whitespace-nowrap px-4 sm:px-6 lg:px-8 py-3">
         <div className="flex items-center gap-8">
+          {/* Hamburger Menu Icon for Mobile */}
+          <button
+            className="md:hidden text-text-light"
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          >
+            <span className="material-symbols-outlined !text-2xl">menu</span>
+          </button>
+
           <Link href="/" className="flex items-center gap-3">
             <Image src="/brandLogo.png" alt="Wovin Logo" width={60} height={60} />
             <h2 className="text-xl font-bold tracking-tighter tracking-wider">WOVIN</h2>
@@ -122,8 +132,8 @@ export default function Header() {
           </div>
         </div>
       </div>
+      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
     </header>
   );
 }
-
 

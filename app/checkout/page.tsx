@@ -7,9 +7,8 @@ import { useCart } from '@/app/context/CartContext';
 
 export default function CheckoutPage() {
   const { cart, getCartTotal } = useCart();
-  const [shippingMethod, setShippingMethod] = useState('standard');
-
-  const shippingCost = shippingMethod === 'standard' ? 5 : 15;
+  const shippingMethod = 'standard';
+  const shippingCost = 5;
   const taxes = getCartTotal() * 0.08; // 8% tax
   const total = getCartTotal() + shippingCost + taxes;
 

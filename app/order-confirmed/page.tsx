@@ -8,8 +8,9 @@ import { useReactToPrint } from 'react-to-print';
 export default function OrderConfirmedPage() {
   const componentRef = useRef<HTMLDivElement>(null);
   const handlePrint = useReactToPrint({
+    // @ts-ignore
     content: () => componentRef.current,
-  } as any);
+  });
 
   return (
     <main className="flex-1 bg-background-light">
