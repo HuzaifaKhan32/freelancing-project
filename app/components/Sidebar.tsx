@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence, Transition } from 'framer-motion';
+import { AiOutlineClose } from 'react-icons/ai'; // Import the close icon
 
 interface SidebarProps {
   isOpen: boolean;
@@ -22,13 +23,14 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           animate="visible"
           exit="hidden"
           variants={sidebarVariants}
-          className="fixed top-0 right-0 h-full w-64 bg-white/80 backdrop-blur-sm z-50 shadow-lg p-6 flex flex-col items-start space-y-4"
+          className="fixed top-0 right-0 h-full w-full sm:w-64 backdrop-blur-sm z-50 shadow-lg p-6 flex flex-col items-start space-y-4 border border-white/20"
+          style={{ background: 'rgba(255, 255, 255, 0.1)' }}
         >
-          <button onClick={onClose} className="self-end text-2xl font-bold">X</button>
+          <button onClick={onClose} className="self-end text-2xl font-bold"><AiOutlineClose /></button>
           <Link href="/" onClick={onClose} className="text-xl font-medium text-text-light hover:text-primary">Home</Link>
-          <Link href="/shop" onClick={onClose} className="text-xl font-medium text-text-light hover:text-primary">Shop</Link>
-          <Link href="/about" onClick={onClose} className="text-xl font-medium text-text-light hover:text-primary">About Us</Link>
-          <Link href="/contact" onClick={onClose} className="text-xl font-medium text-text-light hover:text-primary">Contact Us</Link>
+          <Link href="/profile" onClick={onClose} className="text-xl font-medium text-text-light hover:text-primary">Profile</Link>
+          <Link href="/wishlist" onClick={onClose} className="text-xl font-medium text-text-light hover:text-primary">Wishlist</Link>
+          <Link href="/cart" onClick={onClose} className="text-xl font-medium text-text-light hover:text-primary">Cart</Link>
         </motion.div>
       )}
     </AnimatePresence>
