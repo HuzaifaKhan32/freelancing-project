@@ -52,15 +52,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 flex items-center justify-center border-b border-solid border-text-light/10 bg-background-light/80 backdrop-blur-sm">
       <div className="flex w-full max-w-7xl items-center justify-between whitespace-nowrap px-4 sm:px-6 lg:px-8 py-3">
+        {/* Left side: Logo and Name */}
         <div className="flex items-center gap-8">
-          {/* Hamburger Menu Icon for Mobile */}
-          <button
-            className="md:hidden text-text-light"
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          >
-            <span className="material-symbols-outlined !text-2xl">menu</span>
-          </button>
-
           <Link href="/" className="flex items-center gap-3">
             <Image src="/brandLogo.png" alt="Wovin Logo" width={60} height={60} />
             <h2 className="text-xl font-bold tracking-tighter tracking-wider">WOVIN</h2>
@@ -72,7 +65,10 @@ export default function Header() {
             <Link className="text-sm font-medium hover:text-primary" href="/shop">Shop</Link>
           </nav>
         </div>
+
+        {/* Right side: Search, Wishlist, Cart, Menu Icon */}
         <div className="flex flex-1 justify-end gap-2 sm:gap-4">
+          {/* Search bar (hidden on mobile, visible from sm breakpoint up) */}
           <div className="relative hidden sm:flex flex-col min-w-40 max-w-64" ref={searchContainerRef}>
             <label className="!h-10 w-full">
               <div className="flex w-full flex-1 items-stretch rounded-lg h-full">
@@ -113,23 +109,30 @@ export default function Header() {
               </div>
             )}
           </div>
-          <div className="flex gap-2">
-            <button className="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 border border-text-light/20 bg-content-light text-text-light hover:bg-text-light/5">
-              <span className="material-symbols-outlined !text-2xl">person</span>
-            </button>
-            <Link href="/wishlist" className="relative flex cursor-pointer items-center justify-center rounded-lg h-10 w-10 border border-text-light/20 bg-content-light text-text-light hover:bg-text-light/5">
-              {wishlist.length > 0 && (
-                <span className="absolute -top-2 -right-2 z-10 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">{wishlist.length}</span>
-              )}
-              <span className="material-symbols-outlined !text-2xl">favorite</span>
-            </Link>
-            <Link href="/cart" className="relative flex cursor-pointer items-center justify-center rounded-lg h-10 w-10 border border-text-light/20 bg-content-light text-text-light hover:bg-text-light/5">
-              {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 z-10 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">{cartCount}</span>
-              )}
-              <span className="material-symbols-outlined !text-2xl">shopping_bag</span>
-            </Link>
-          </div>
+
+          {/* Wishlist Button (Visible on all screens) */}
+          <Link href="/wishlist" className="relative flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 border border-text-light/20 bg-content-light text-text-light hover:bg-text-light/5">
+            {wishlist.length > 0 && (
+              <span className="absolute -top-2 -right-2 z-10 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">{wishlist.length}</span>
+            )}
+            <span className="material-symbols-outlined !text-2xl">favorite</span>
+          </Link>
+
+          {/* Cart Button (Visible on all screens) */}
+          <Link href="/cart" className="relative flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 border border-text-light/20 bg-content-light text-text-light hover:bg-text-light/5">
+            {cartCount > 0 && (
+              <span className="absolute -top-2 -right-2 z-10 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">{cartCount}</span>
+            )}
+            <span className="material-symbols-outlined !text-2xl">shopping_bag</span>
+          </Link>
+
+          {/* Hamburger Menu Icon for Mobile */}
+          <button
+            className="md:hidden text-text-light"
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          >
+            <span className="material-symbols-outlined !text-2xl">menu</span>
+          </button>
         </div>
       </div>
       <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
