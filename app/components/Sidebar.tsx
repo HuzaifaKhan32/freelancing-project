@@ -6,7 +6,7 @@ import { useWishlist } from '@/app/context/WishlistContext';
 import { useCart } from '@/app/context/CartContext';
 import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
-import { products } from '@/app/lib/data';
+import { products, Product } from '@/app/lib/data';
 
 
 interface SidebarProps {
