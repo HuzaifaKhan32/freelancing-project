@@ -154,7 +154,7 @@ export default function ProductClientComponent({ product }: { product: Product }
             <div className="border-b border-text-light/20 py-4">
               <details className="group" open>
                 <summary className="flex justify-between items-center cursor-pointer list-none">
-                  <h3 className="text-base font-semibold text-text-light">Description</h3>
+                  <h2 className="text-base font-semibold text-text-light">Product Details</h2>
                   <span className="text-text-secondary-light transition-transform duration-300 group-open:rotate-180">
                     <span className="material-symbols-outlined">expand_more</span>
                   </span>
