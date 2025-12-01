@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="col-span-2 md:col-span-1">
           <div className="flex items-center gap-3">
             <Image src="/brandLogo.png" alt="Wovin Logo" width={32} height={32} />
-            <h2 className="text-xl font-bold tracking-tighter">WOVIN</h2>
+            <h1 className="text-xl font-bold tracking-tighter">WOVIN</h1>
           </div>
           <p className="mt-4 text-text-secondary-light">Crafting threads of connection.</p>
         </div>

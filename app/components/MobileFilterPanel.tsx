@@ -41,7 +41,7 @@ const MobileFilterPanel: React.FC<MobileFilterPanelProps> = ({ isOpen, onClose }
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the panel
           >
             <div className="flex justify-between items-center">
-              <h3 className="text-xl font-bold text-text-light">Filters</h3>
+              <h2 className="text-xl font-bold text-text-light">Product Filters</h2>
               <button onClick={onClose} className="text-2xl font-bold">
                 <AiOutlineClose />
               </button>

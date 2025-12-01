@@ -58,22 +58,22 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           animate="visible"
           exit="hidden"
           variants={sidebarVariants}
-          className="fixed top-0 right-0 h-full w-1/2 bg-white backdrop-blur-sm z-50 shadow-lg p-6 flex flex-col items-start space-y-4 border border-white/20"
+          className="fixed top-0 right-0 z-[999] h-screen w-[60%] bg-white shadow-[-10px_0px_10px_rgba(0,0,0,0.1)] p-[2vh_2vw] flex flex-col items-start justify-start"
         >
           <div className="flex justify-between items-center w-full">
             <p className="text-xl font-bold text-primary">Menu</p>
-            <button onClick={onClose} className="text-2xl font-bold"><AiOutlineClose /></button>
+            <button onClick={onClose} className="text-2xl font-bold cursor-pointer text-primary"><AiOutlineClose /></button>
           </div>
           
           {/* Search bar */}
-          <div className="relative flex flex-col min-w-40 w-full" ref={searchContainerRef}>
+          <div className="relative flex flex-col min-w-40 w-full mt-5" ref={searchContainerRef}>
             <label className="!h-10 w-full">
               <div className="flex w-full flex-1 items-stretch rounded-lg h-full">
-                <div className="text-text-secondary-light flex bg-gray-100 items-center justify-center pl-3 rounded-l-lg border border-transparent">
+                <div className="text-primary flex bg-transparent items-center justify-center pl-3 rounded-l-lg border border-primary">
                   <span className="material-symbols-outlined !text-2xl">search</span>
                 </div>
                 <input
-                  className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg focus:outline-none border border-transparent bg-gray-100 h-full placeholder:text-text-secondary-light px-2 rounded-l-none pl-2 text-base font-normal leading-normal"
+                  className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg focus:outline-none border border-primary bg-transparent h-full placeholder:text-primary px-2 rounded-l-none pl-2 text-base font-normal leading-normal text-primary"
                   placeholder="Search"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -96,7 +96,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                       >
                       <Image src={product.images[0].src} alt={product.images[0].alt} className="w-12 h-12 rounded-md object-cover" width={48} height={48}/>
                         <div>
-                          <p className="font-medium">{product.name}</p>
+                          <p className="font-medium text-primary">{product.name}</p>
                           <p className="text-sm text-gray-500">${product.price.toFixed(2)}</p>
                         </div>
                       </Link>
@@ -106,36 +106,12 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               </div>
             )}
           </div>
-          
-          {/* Profile Button */}
-          <Link href="/profile" onClick={onClose} className="text-xl font-medium text-primary hover:text-black w-full text-center py-2 rounded-lg">Profile</Link>
 
-          <div className="flex flex-col items-start space-y-4 w-full"> {/* Centered links */}
-            <Link href="/" onClick={onClose} className="text-xl font-medium text-primary hover:text-black w-full text-center py-2 rounded-lg">Home</Link>
-            <Link href="/shop" onClick={onClose} className="text-xl font-medium text-primary hover:text-black w-full text-center py-2 rounded-lg">Shop</Link>
-            <Link href="/about" onClick={onClose} className="text-xl font-medium text-primary hover:text-black w-full text-center py-2 rounded-lg">About Us</Link>
-            <Link href="/contact" onClick={onClose} className="text-xl font-medium text-primary hover:text-black w-full text-center py-2 rounded-lg">Contact Us</Link>
-          </div>
-
-          {/* Wishlist and Cart Buttons at the bottom */}
-          <div className="mt-auto flex flex-col items-start space-y-4 w-full">
-            {/* Wishlist Button */}
-            <Link href="/wishlist" onClick={onClose} className="relative flex items-center justify-center overflow-hidden rounded-lg h-10 w-full border border-text-light/20 bg-content-light text-primary hover:text-black hover:bg-text-light/5">
-              {wishlist.length > 0 && (
-                <span className="absolute -top-2 -right-2 z-10 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">{wishlist.length}</span>
-              )}
-              <span className="material-symbols-outlined !text-2xl">favorite</span>
-              <span className="ml-2">Wishlist</span>
-            </Link>
-
-            {/* Cart Button */}
-            <Link href="/cart" onClick={onClose} className="relative flex items-center justify-center overflow-hidden rounded-lg h-10 w-full border border-text-light/20 bg-content-light text-primary hover:text-black hover:bg-text-light/5">
-              {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 z-10 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">{cartCount}</span>
-              )}
-              <span className="material-symbols-outlined !text-2xl">shopping_bag</span>
-              <span className="ml-2">Cart</span>
-            </Link>
+          <div className="flex flex-col items-start space-y-4 w-full mt-5">
+            <Link href="/" onClick={onClose} className="mt-5 w-full text-xl font-semibold text-primary">Home</Link>
+            <Link href="/shop" onClick={onClose} className="mt-5 w-full text-xl font-semibold text-primary">Shop</Link>
+            <Link href="/about" onClick={onClose} className="mt-5 w-full text-xl font-semibold text-primary">About Us</Link>
+            <Link href="/contact" onClick={onClose} className="mt-5 w-full text-xl font-semibold text-primary">Contact Us</Link>
           </div>
         </motion.div>
       )}

@@ -56,7 +56,7 @@ export default function Header() {
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center gap-3">
             <Image src="/brandLogo.png" alt="Wovin Logo" width={60} height={60} />
-            <h2 className="text-xl font-bold tracking-tighter tracking-wider">WOVIN</h2>
+            <h1 className="text-xl font-bold tracking-tighter tracking-wider">WOVIN</h1>
           </Link>
           <nav className="hidden items-center gap-9 md:flex">
             <Link className="text-sm font-medium hover:text-primary" href="/">Home</Link>
@@ -128,7 +128,7 @@ export default function Header() {
 
           {/* Hamburger Menu Icon for Mobile */}
           <button
-            className="md:hidden text-text-light"
+            className="md:hidden relative flex cursor-pointer items-center justify-center rounded-lg h-10 w-10 border border-text-light/20 bg-content-light text-text-light hover:bg-text-light/5"
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
           >
             <span className="material-symbols-outlined !text-2xl">menu</span>

@@ -94,7 +94,7 @@ export default function ShopPage() {
         <div className="flex-1">
           <div className="flex flex-wrap justify-between items-center gap-4 pb-6 border-b border-text-light/10">
             <div className="flex flex-col gap-1">
-              <h1 className="text-text-light text-4xl font-black tracking-[-0.033em]">All T-Shirts</h1>
+              <h1 className="text-text-light text-4xl font-black tracking-[-0.033em]">Products</h1>
               <p className="text-text-secondary-light text-base font-normal">Shop Our Collection of Premium T-Shirts</p>
             </div>
             {/* Mobile Filter Button */}
