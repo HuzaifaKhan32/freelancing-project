@@ -61,7 +61,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           className="fixed top-0 right-0 h-full w-1/2 bg-white backdrop-blur-sm z-50 shadow-lg p-6 flex flex-col items-start space-y-4 border border-white/20"
         >
           <div className="flex justify-between items-center w-full">
-            <p className="text-xl font-bold text-primary">Menu</p>
+            <h1 className="text-xl font-bold text-primary">Wovin</h1>
             <button onClick={onClose} className="text-2xl font-bold"><AiOutlineClose /></button>
           </div>
           
